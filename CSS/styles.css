@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    font-size: 10rem;
+}
+
+h1 span {
+    display: block;
+}
+
+li {
+    font-size: 5rem;
+    text-align: right;
+    list-style: none;
+}
+
+/* Subtle animation to change link position on hover */
+
+li:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    font-size: 1rem;
+}
+
+
+/* Header section including title, self-portrait and links */
+
+#top {
+    margin: 2rem 0 0 0;
+}
+
+#text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#self img {
+    width: 35vw;
+}
+
+
+/* Grid section with photographs */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-gap: 10px;
+    margin: 1rem;
+}
+
+/* Total of 11 rows and 6 columns with gap of 10px */
+
+.camera, .portrait, .sea, .person, .exposure, .moon, .mountain, .red {
+    overflow: hidden;
+}
+
+/* Hide all the overflow contents within each div that contains the photograph */
+
+#grid img {
+    transition: 1s;
+}
+
+#grid img:hover {
+   transform: scale(1.08);
+   filter: sepia(100%);
+}
+
+/* Change the images from color to sepia, enlarge the size and set 1s of transition duration */
+
+.camera { 
+    grid-area: 1 / 1 / 5 / 3; 
+}
+
+.portrait { 
+    grid-area: 5 / 1 / 12 / 3; 
+}
+
+.sea { 
+    grid-area: 1 / 3 / 6 / 4;
+}
+
+.person { 
+    grid-area: 6 / 3 / 9 / 5; 
+}
+
+.exposure { 
+    grid-area: 9 / 3 / 12 / 6; 
+}
+
+.moon { 
+    grid-area: 1 / 4 / 6 / 7; 
+}
+
+.mountain { 
+    grid-area: 6 / 5 / 9 / 7; 
+}
+
+.red { 
+    grid-area: 9 / 6 / 12 / 7; 
+}
+
+/* Grid using grid-area method where it identify each image location in a format of: grid-area: row-start/column-start/row-end/column-end (done with visual handdrawn grid) */
+
+#grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} 
+
+/* object-fit: cover - The replaced content is sized to maintain its aspect ratio while filling the element's entire content box. The object will be clipped to fit (W3schools) */
+
+
+/* Copyright text */
+
+#copyright {
+    text-align: center;
+    padding: 2rem;
+}
+
+
+/* 3 media queries for PC, tablet and mobile designs - started with PC design */
+
+/* From PC to tablet design */
+
+@media (max-width: 1398px){
+
+    #text{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #title{
+        text-align: center;
+    }
+
+    li {
+        display: inline-block;
+        margin: auto 2rem;
+    }
+
+}
+
+/* Adjusting the links */
+
+@media (max-width: 1060px){
+
+    li{
+        display: block;
+        text-align: center;
+    }
+}
+
+
+/* Mobile design - photographs changed to flexbox layout */
+
+@media (max-width: 700px){
+
+    h1{
+        font-size: 20vw;
+    } 
+
+    #self img{
+        width: 70vw;
+    }
+    
+    li {
+        font-size: 10vw;
+    }
+
+    #grid{
+        display: flex;
+        flex-direction: column;
+    }
+}
